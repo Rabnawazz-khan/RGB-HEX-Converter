@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RGB ↔ HEX Converter</title>
+  <link rel="icon" type="image/png" href="icon.png">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">
+      <img src="Hex.png" alt="Logo">
+    </div>
+    <h1>RGB ↔ HEX Converter</h1>
+    <button class="dark-toggle" id="darkToggle">
+      <span id="icon">🌙</span>
+    </button>
+  </nav>
+
+  <!--Main App -->
+  <div class="app">
+    <div class="card">
+      <h2>RGB → HEX</h2>
+      <div class="row">
+        <input type="number" placeholder="R" id="fInput" min="0" max="255">
+        <input type="number" placeholder="G" id="sInput" min="0" max="255">
+        <input type="number" placeholder="B" id="thInput" min="0" max="255">
+        <button onclick="findHex()">Convert</button>
+      </div>
+      <div class="row">
+        <input type="text" id="output" placeholder="HEX">
+        <button onclick="copyText('output')">Copy</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>HEX → RGB</h2>
+      <div class="row">
+        <input type="text" id="hexInput" placeholder="#RRGGBB">
+        <button onclick="findRGB()">Convert</button>
+      </div>
+      <div class="row">
+        <input type="text" id="rgbOutput" placeholder="R,G,B">
+        <button onclick="copyText('rgbOutput')">Copy</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Pick a Color</h2>
+      <input type="color" id="colorPicker" value="#ff0000">
+    </div>
+
+    <!--Preview Box -->
+    <div class="preview-box" id="previewBox"></div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
